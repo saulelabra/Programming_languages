@@ -1,7 +1,8 @@
 #|
-Recursive multiplication function
+    Recursion exercises
 |#
 
+;Recursive multiplication function
 (define (multiply a b)
     (case b
         [ (0) 0 ]
@@ -32,5 +33,17 @@ Recursive multiplication function
     (if (empty? a) 
         result 
         (sum_elements_tail (cdr a) (+ result (car a)))
+    )
+)
+
+;Function that takes a list and returns it backwards
+(define (invert_list list1)
+    (invert_list_tail list1 (length list1) 0)
+)
+
+(define (invert_list_tail list1 lengthList count)
+    (if (>= count lengthList)
+        list1
+        (invert_list_tail (append (cdr list1) (list (car list1))) lengthList (+ count 1))    
     )
 )
