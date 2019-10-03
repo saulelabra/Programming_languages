@@ -1,6 +1,6 @@
 #|
 Saúl Enrique Labra Cruz A01020725
-Tarea 5 - Prime Numbers
+Tarea 4 - Prime Numbers
 |#
 
 ;Receives as argument a number, and returns true or false, indicating whether the argument is a prime number
