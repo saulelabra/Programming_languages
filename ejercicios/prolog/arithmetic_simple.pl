@@ -26,3 +26,12 @@ factorial(N, R) :-
     N1 is N - 1,
     factorial(N1, S),%Inside parenthesis expressions are not valid, only variables
     R is N * S.
+
+%Tail recursive factorial - is better for processing efficiency because function doesn't have to return to calling function
+factorial(0, R, R).
+
+factorial(N, A, R) :-
+    N > 0,
+    N1 is N - 1,
+    A1 is A * N,
+    factorial(N1, A1, R).
