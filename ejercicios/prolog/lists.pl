@@ -73,3 +73,12 @@ tec_flatten([H|T], R) :-
     tec_flatten(T, FlatTail),
     append(FlatHead, FlatTail, R).
 
+tec_pack_doubles([],[]).
+tec_pack_doubles([H1|T1], [NewList|NewTail]) :-
+    pack_doubles_helper(H1, T1, TailNextElement, NewList),
+    tec_pack_doubles(TailNextElement, NewTail).
+
+pack_doubles_helper(E, [H|T], [H|T], [E]) :-
+    E \= H.
+pack_doubles_helper(E, [E|T], TNE, [E|NL]) :-
+    pack_doubles_helper(E, T, TNE, NL).
